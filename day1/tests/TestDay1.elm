@@ -1,13 +1,13 @@
-module Example exposing (..)
+module TestDay1 exposing (..)
 
 import Expect exposing (Expectation)
 import Fuzz exposing (Fuzzer, int, list, string)
 import Test exposing (..)
 import Day1 exposing (day1)
 
-suite : Test
-suite =
-    describe "Test cases given in the question"
+part1 : Test
+part1 =
+    describe "Test cases given in day 1 part 1"
     [ test "1122 produces a sum of 3 (1 + 2) because the first digit (1) matches the second digit and the third digit (2) matches the fourth digit." <|
         \_ ->
             "1122"
