@@ -45,7 +45,17 @@ recurse x summa =
     else
         recurse (tail x |> Maybe.withDefault []) summa
 
+{-
+Now, instead of considering the next digit, it wants you to consider the digit 
+halfway around the circular list. That is, if your list contains 10 items, only 
+include a digit in your sum if the digit 10/2 = 5 steps forward matches it. 
+Fortunately, your list has an even number of elements. 
+-}
+day1part2 : String -> Int
+day1part2 x = -1 -- Not implemented yet
+
 {- Helper function that gives a list of Int from a list of Char [digits]. -}
+asciiOffset : Int
 asciiOffset = toCode '0'
 listDigitsToListNumbers : List Char -> List Int
 listDigitsToListNumbers listOfDigits =

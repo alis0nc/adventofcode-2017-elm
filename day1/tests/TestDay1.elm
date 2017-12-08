@@ -3,7 +3,7 @@ module TestDay1 exposing (..)
 import Expect exposing (Expectation)
 import Fuzz exposing (Fuzzer, int, list, string)
 import Test exposing (..)
-import Day1 exposing (day1)
+import Day1 exposing (day1, day1part2)
 
 part1 : Test
 part1 =
@@ -28,4 +28,34 @@ part1 =
             "91212129"
                 |> day1 
                 |> Expect.equal 9
+    ]
+
+part2 : Test
+part2 =
+    describe "Test cases given in day 1 part 2"
+    [ test "1212 produces 6: the list contains 4 items, and all four digits match the digit 2 items ahead." <|
+        \_ ->
+            "1212"
+                |> day1part2
+                |> Expect.equal 6
+    , test "1221 produces 0, because every comparison is between a 1 and a 2." <|
+        \_ -> 
+            "1221"
+                |> day1part2
+                |> Expect.equal 0
+    , test "123425 produces 4, because both 2s match each other, but no other digit has a match." <|
+        \_ -> 
+            "123425"
+                |> day1part2
+                |> Expect.equal 4
+    , test "123123 produces 12." <|
+        \_ ->
+            "123123"
+                |> day1part2
+                |> Expect.equal 12
+    , test "12131415 produces 4." <|
+        \_ -> 
+            "12131415"
+                |> day1part2
+                |> Expect.equal 4
     ]
